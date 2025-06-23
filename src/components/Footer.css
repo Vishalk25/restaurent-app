@@ -1,0 +1,31 @@
+#footer {
+  color: aliceblue;
+  background-color: rgb(17, 102, 17);
+  display: flex;
+  /* justify-content: center; */
+  justify-content: space-around;
+  /* transform: translateZ(0); */
+}
+
+.anchor {
+  width: 40px;
+  height: 25px;
+  margin-right: 3px;
+  border-radius: 5px;
+}
+
+.f-h3 {
+  text-decoration: underline;
+  color: yellowgreen;
+}
+
+.f-para:hover {
+  color: rgb(37, 35, 35);
+}
+
+#c-right {
+  color: yellowgreen;
+  background-color: rgb(17, 102, 17);
+  text-align: center;
+  padding-right: 60px;
+}

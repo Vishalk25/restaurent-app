@@ -1,0 +1,111 @@
+.nav {
+  width: -webkit-fill-available;
+  background-color: rgba(187, 186, 186, 0.4);
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  height: 18vh;
+}
+
+.nav-home {
+  width: -webkit-fill-available;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+}
+#brand-logo {
+  margin-top: 2vh;
+  margin-left: 8vw;
+  color: rgb(51, 50, 50);
+  font-family: "cursive";
+  font-weight: 900;
+}
+
+#nav-menu {
+  display: flex;
+  justify-content: right;
+  color: rgb(1, 14, 1);
+  margin-top: 50px;
+}
+
+.menu {
+  color: rgb(29, 28, 28);
+  text-decoration: none;
+  padding-right: 45px;
+  padding-bottom: 1px;
+  font-size: 19px;
+  font-weight: 600;
+  cursor: pointer;
+  height: 20px;
+}
+
+.menu:hover {
+  color: rgb(252, 252, 252);
+  margin-top: -4px;
+}
+
+#main-drop {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+#drop {
+  display: flex;
+  flex-direction: column;
+  background-color: inherit;
+  border: none;
+  font-size: 16px;
+  max-width: fit-content;
+  background-color: rgb(5, 83, 5);
+  color: lightgray;
+  position: fixed;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+#review-list {
+  font-size: 17px;
+  text-decoration: underline;
+  color: rgb(8, 146, 8);
+}
+
+.bi-cart {
+  padding-right: 20px;
+  color: rgb(30, 31, 31);
+}
+
+.bi-cart:hover {
+  color: rgb(247, 248, 247);
+  margin-top: -3px;
+}
+
+.cartContainer {
+  position: relative;
+  width: 25px;
+  height: 20px;
+  margin-right: 25px;
+}
+
+.cartContainer:hover {
+  margin-top: -4px;
+}
+
+#cartTotalItems {
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  color: black;
+  background-color: rgb(248, 245, 245);
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.login {
+  background-color: aqua;
+}

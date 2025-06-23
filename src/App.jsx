@@ -1,23 +1,27 @@
-import { useState } from "react";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import React from "react";
+import "./components/Nav.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Homepage from "./pages/Homepage";
+import Menu from "./pages/Menu";
+import Offers from "./pages/Offers";
+import Cart from "./pages/Cart";
+import { Routes, Route, useLocation } from "react-router-dom";
 
-function App() {
-  const [count, setCount] = useState(0);
+export default function App() {
+  const location = useLocation();
+  const path = location.pathname.replace("/", "");
 
   return (
-    <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-    </>
+    <div>
+      <Navbar path={path} />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/offers" element={<Offers />} />
+        <Route path="/menu/:dish" element={<Menu dishName={path} />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+      <Footer />
+    </div>
   );
 }
-
-export default App;

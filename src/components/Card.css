@@ -1,0 +1,61 @@
+.card-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-container {
+  width: 330px;
+  border: 2px solid rgb(233, 223, 223);
+  margin: 20px 20px 30px 35px;
+  padding-left: 15px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+}
+
+#card-img {
+  margin: 15px 0 0;
+  align-self: center;
+  width: 95%;
+  height: 220px;
+  border-radius: 12px;
+}
+
+#card-h {
+  text-align: start;
+  font-size: large;
+  color: rgba(2, 6, 12, 0.75);
+  margin-bottom: 1px;
+}
+
+#money {
+  font-weight: 600;
+  text-align: start;
+  margin-top: 5px;
+  color: rgba(2, 6, 12, 0.75);
+}
+
+#card-p {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  max-width: 90%;
+  text-align: start;
+  font-size: 16px;
+  font-weight: 200;
+  color: rgba(2, 6, 12, 0.6);
+}
+
+#card-btn {
+  color: rgb(17, 102, 17);
+  font-weight: 700;
+  font-size: large;
+  margin: 10px 0 18px;
+  background-color: rgb(253, 253, 253);
+  border: 1px solid rgb(233, 223, 223);
+  border-radius: 15px;
+  padding: 10px 2em;
+  cursor: pointer;
+}
+
+#card-btn:hover {
+  background-color: rgb(233, 223, 223);
+}

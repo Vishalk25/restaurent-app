@@ -1,0 +1,33 @@
+.signup-container {
+  height: 75vh;
+  position: relative;
+  text-align: center;
+  z-index: 3;
+}
+
+.signup-fields {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.4em;
+  margin: auto;
+  width: 90%;
+}
+
+.signup-title {
+  display: block;
+  padding-top: 1em;
+  margin: auto;
+  width: 3em;
+  font-size: large;
+  font-weight: 500;
+}
+
+label {
+  font-size: 14px;
+}
+
+input {
+  padding: 5px 10px;
+  border-radius: 1em;
+  border: 0.5px solid silver;
+}

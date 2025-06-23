@@ -1,0 +1,78 @@
+#self-container {
+  display: flex;
+  justify-content: center;
+  margin: 4em 0;
+}
+
+.intro {
+  text-align: center;
+  padding: 60px;
+}
+
+#intro-head {
+  margin-top: -10px;
+  color: rgb(17, 102, 17);
+  padding-bottom: 15px;
+  animation: scrollblur;
+  animation-timeline: view();
+  animation: scrollheader both;
+  animation-timeline: view();
+}
+
+@keyframes scrollheader {
+  0% {
+    position: relative;
+    transform: translate(8em, -2em) scale(1.5);
+    color: rgb(3, 65, 14);
+  }
+  50% {
+    position: inherit;
+    transform: translate(0, 0) scale(1);
+  }
+}
+#self {
+  font-weight: 350;
+}
+
+#intro-p {
+  line-height: 35px;
+  font-size: large;
+  font-weight: 500;
+  animation: scrollblur;
+  animation-timeline: view();
+}
+
+#self-btn {
+  padding: 15px;
+  border-radius: 25px;
+  width: 8em;
+  color: white;
+  background-color: rgb(17, 102, 17);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#self-btn:hover {
+  color: rgb(17, 102, 17);
+  background-color: rgb(238, 245, 245);
+}
+
+#self-img {
+  height: 400px;
+  width: 350px;
+  animation: scrollblur;
+  animation-timeline: view();
+}
+
+@keyframes scrollblur {
+  0% {
+    opacity: 0.1;
+  }
+  65% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
