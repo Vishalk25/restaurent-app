@@ -5,14 +5,7 @@ import { deleteCartItemsReq, getCartItemsReq, postCartItem } from "../API/Api";
 export const FoodContext = createContext();
 
 export const FoodContextProvider = ({ children }) => {
-  const [cart, setCart] = useState([
-    {
-      id: "33",
-      name: "Premium Veg FarmVilla Pizza.",
-      price: "450",
-      url: undefined,
-    },
-  ]);
+  const [cart, setCart] = useState([]);
 
   const getCartItems = () => {
     getCartItemsReq().then((res) => {
@@ -20,20 +13,44 @@ export const FoodContextProvider = ({ children }) => {
     });
   };
 
-  const handleCart = async (item) => {
-    console.log("item", item);
+  const handleCart = async (item, addItemQty) => {
+    console.log("handleCart 1", item, addItemQty);
+    let cartIds = [];
+    let updatedCart;
 
-    await postCartItem(item).then((res) => {
-      const payload = [...cart, res.data];
-      setCart(payload);
-    });
+    addItemQty
+      ? (updatedCart = cart.map((i) => {
+          cartIds.push(i.id);
+          if (i.id === item.id) {
+            return { ...i, qty: i.qty ? i.qty + 1 : 1 };
+          }
+          return i;
+        }))
+      : (updatedCart = cart.map((i) => {
+          cartIds.push(i.id);
+          if (i.id === item.id) {
+            return { ...i, qty: i.qty - 1 };
+          }
+          return i;
+        }));
+
+    !cartIds.includes(item.id)
+      ? setCart([...updatedCart, { ...item, qty: 1 }])
+      : setCart([...updatedCart]);
+
+    // await postCartItem(item).then((res) => {
+    //   const payload = [...cart, res.data];
+    //   setCart(payload);
+    // });
   };
 
   const handleDelete = (id) => {
     const payload = cart.filter((item) => item.id !== id);
-    deleteCartItemsReq(id).then((res) => {
-      setCart(payload);
-    });
+    setCart(payload);
+
+    // deleteCartItemsReq(id).then((res) => {
+    //   setCart(payload);
+    // });
   };
 
   useEffect(() => {

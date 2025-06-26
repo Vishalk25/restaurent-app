@@ -1,7 +1,7 @@
 #self-container {
   display: flex;
   justify-content: center;
-  margin: 4em 0;
+  margin: 2em 0;
 }
 
 .intro {
@@ -59,7 +59,7 @@
 }
 
 #self-img {
-  height: 400px;
+  max-height: 400px;
   width: 350px;
   animation: scrollblur;
   animation-timeline: view();
@@ -74,5 +74,16 @@
   }
   100% {
     opacity: 0.1;
+  }
+}
+
+@media (max-width: 850px) {
+  #self-container {
+    flex-direction: column;
+  }
+
+  #self-img {
+    max-height: 370px;
+    width: 90%;
   }
 }

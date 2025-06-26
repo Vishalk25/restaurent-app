@@ -7,13 +7,14 @@ import Menu from "./pages/Menu";
 import Offers from "./pages/Offers";
 import Cart from "./pages/Cart";
 import { Routes, Route, useLocation } from "react-router-dom";
+import "./App.css";
 
 export default function App() {
   const location = useLocation();
   const path = location.pathname.replace("/", "");
 
   return (
-    <div>
+    <div id="root1">
       <Navbar path={path} />
       <Routes>
         <Route path="/" element={<Homepage />} />

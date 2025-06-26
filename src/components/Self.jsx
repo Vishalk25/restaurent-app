@@ -4,7 +4,7 @@ import "./Self.css";
 function Self() {
   return (
     <div id="self-container">
-      <div className="intro" style={{ width: "500px" }}>
+      <div className="intro">
         <h1 id="intro-head">
           <span id="self">OUR</span> STORY
         </h1>

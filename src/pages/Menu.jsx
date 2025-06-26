@@ -35,7 +35,7 @@ function Menu({ dishName }) {
                 {e.menu.map((val) => (
                   <Card
                     key={val.id}
-                    source={val.urls}
+                    source={val.url}
                     dish={val.name}
                     {...val}
                   />

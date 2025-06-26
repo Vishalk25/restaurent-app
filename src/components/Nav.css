@@ -9,19 +9,28 @@
 
 .nav-home {
   width: -webkit-fill-available;
+  position: absolute;
   z-index: 2;
   display: flex;
   justify-content: space-between;
   background-color: transparent;
-  position: absolute;
   top: 0;
 }
+
 #brand-logo {
-  margin-top: 2vh;
-  margin-left: 8vw;
+  margin: 2vh 12vw 0 8vw;
   color: rgb(51, 50, 50);
   font-family: "cursive";
   font-weight: 900;
+}
+
+#searchBar {
+  min-width: 20vw;
+  margin-top: 50px;
+}
+
+input::placeholder {
+  color: rgb(0, 0, 0);
 }
 
 #nav-menu {
@@ -36,7 +45,7 @@
   text-decoration: none;
   padding-right: 45px;
   padding-bottom: 1px;
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 600;
   cursor: pointer;
   height: 20px;
@@ -108,4 +117,13 @@
 
 .login {
   background-color: aqua;
+}
+
+@media (max-width: 768px) {
+  #nav-menu {
+    display: none;
+  }
+  .menu {
+    display: none;
+  }
 }

@@ -2,6 +2,14 @@ import React from "react";
 import "./BrandTitle.css";
 
 function BrandTitle() {
+  const getMenu = () => {
+    console.log("window", window.innerWidth);
+
+    window.scrollTo({
+      top: 1260,
+      behavior: "smooth",
+    });
+  };
   return (
     <div id="brandTitle">
       <img
@@ -12,6 +20,9 @@ function BrandTitle() {
       <div className="brandContainer">
         <p className="brandName">Have Around</p>
         <p className="tagLine">Bringing People Together, One Bite at a Time.</p>
+        <div id="our-menu" onClick={getMenu} style={{ cursor: "pointer" }}>
+          <div id="our-menu-label">Our Menu</div>
+        </div>
         <svg
           width="230px"
           height="120px"

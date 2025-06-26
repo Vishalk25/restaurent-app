@@ -55,7 +55,7 @@ export default function Login() {
         sx={{
           p: 0,
           color: "rgb(29, 28, 28)",
-          fontSize: "17px",
+          fontSize: "16px",
           fontWeight: 600,
           textTransform: "none",
           "&:hover": {

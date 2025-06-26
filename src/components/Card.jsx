@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { FoodContext } from "../Context/FoodContextProvider";
 import "./Card.css";
+import Button from "@mui/material/Button";
 
 function Card(props) {
   const { handleCart } = useContext(FoodContext);
@@ -17,7 +18,8 @@ function Card(props) {
   };
 
   const handleAddToCart = () => {
-    handleCart(data);
+    console.log("cart data", data);
+    handleCart(data, true);
   };
 
   return (
@@ -28,9 +30,9 @@ function Card(props) {
           <h4 id="card-h">{dish}</h4>
           <p id="money">₹ {props.price}/-</p>
           <p id="card-p">World class delicious dishes on your plate.</p>
-          <button id="card-btn" onClick={handleAddToCart}>
+          <Button variant="contained" id="card-btn" onClick={handleAddToCart}>
             ADD
-          </button>
+          </Button>
         </div>
       </div>
     </>

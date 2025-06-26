@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { FoodContext } from "../Context/FoodContextProvider";
 import Login from "../pages/Login";
 import BrandLogo from "../Assets/brandlogo2.png";
+import CustomizedMenus from "./NavMenu";
 
 export default function Navbar({ path }) {
   const { cart } = useContext(FoodContext);
@@ -17,6 +18,16 @@ export default function Navbar({ path }) {
         <Link to="/">
           <img src={BrandLogo} height={"100px"}></img>
         </Link>
+      </div>
+      <div id="searchBar">
+        <input
+          placeholder="Search your taste"
+          style={{
+            width: "100%",
+            backgroundColor: "silver",
+            opacity: "0.4",
+          }}
+        ></input>
       </div>
       <div id="nav-menu">
         <Link to="/" className="menu">
@@ -47,8 +58,7 @@ export default function Navbar({ path }) {
           </div>
         </Link>
       </div>
+      {/* <CustomizedMenus /> */}
     </div>
   );
 }
-
-// export default Navbar;
