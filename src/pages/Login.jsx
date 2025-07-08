@@ -52,16 +52,14 @@ export default function Login() {
   return (
     <div className="signup-container">
       <Button
+        id="login-btn"
         sx={{
           p: 0,
+          ml: -1,
           color: "rgb(29, 28, 28)",
           fontSize: "16px",
           fontWeight: 600,
           textTransform: "none",
-          "&:hover": {
-            color: "rgb(252, 252, 252)",
-            bgcolor: "transparent",
-          },
         }}
         onClick={handleOpen}
         variant="text"

@@ -1,12 +1,20 @@
 #self-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   margin: 2em 0;
 }
 
 .intro {
   text-align: center;
   padding: 60px;
+  min-width: 50vw;
+  flex: 4 5;
+}
+
+.intro-img {
+  text-align: center;
+  padding: 5vw;
+  flex: 3 3;
 }
 
 #intro-head {
@@ -60,7 +68,7 @@
 
 #self-img {
   max-height: 400px;
-  width: 350px;
+  width: 28vw;
   animation: scrollblur;
   animation-timeline: view();
 }
@@ -84,6 +92,6 @@
 
   #self-img {
     max-height: 370px;
-    width: 90%;
+    width: 50%;
   }
 }

@@ -23,7 +23,7 @@ function BrandTitle() {
         <div id="our-menu" onClick={getMenu} style={{ cursor: "pointer" }}>
           <div id="our-menu-label">Our Menu</div>
         </div>
-        <svg
+        {/* <svg
           width="230px"
           height="120px"
           viewBox="0 0 200 100"
@@ -39,7 +39,12 @@ function BrandTitle() {
             fill="rgb(51, 50, 50)"
             opacity="0.6"
           />
-        </svg>
+        </svg> */}
+        <img
+          src="https://media2.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZXV6b3c5cXZiZzh3cDY0bXJ2eTJjaXUzMHhjd2U5MnlyM21sbm9vOSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/XG2A5I3Gyun8oF68Ts/giphy.webp"
+          width={"170vw"}
+          style={{ opacity: 0.8 }}
+        />
       </div>
     </div>
   );

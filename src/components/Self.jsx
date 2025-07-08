@@ -17,9 +17,14 @@ function Self() {
           sounding pretty great, and soon Sanjay was opening the first Have
           Around in City.
         </p>
-        <button id="self-btn">Like</button>
+        <img
+          src="https://media2.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZGtxdnA1djZlZ3ByeTdzdXA1ZW92emcyanpiYnNxZWwza2VhYmw4ayZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/7JyXb5iPkejvHjA80c/100.webp"
+          width={"150vw"}
+          style={{ opacity: 0.8 }}
+        />
+        {/* <button id="self-btn">Like</button> */}
       </div>
-      <div className="intro">
+      <div className="intro-img">
         <img
           id="self-img"
           src="https://assets.architecturaldigest.in/photos/600836eb08ae763b9ae84faa/master/w_1600,c_limit/happy-thai-mumbai-restaurant-thai-food-restaurants-in-mumbai_3-1.jpg"

@@ -1,32 +1,45 @@
-.nav {
+.nav,
+.nav-home {
   width: -webkit-fill-available;
-  background-color: rgba(187, 186, 186, 0.4);
+  background-color: rgba(255, 255, 255, 0.4);
   z-index: 2;
   display: flex;
   justify-content: space-between;
   height: 18vh;
+  align-items: center;
+  padding: 0 3vw;
+  gap: 3vw;
 }
 
 .nav-home {
-  width: -webkit-fill-available;
   position: absolute;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
   background-color: transparent;
   top: 0;
 }
 
 #brand-logo {
-  margin: 2vh 12vw 0 8vw;
   color: rgb(51, 50, 50);
   font-family: "cursive";
   font-weight: 900;
+  min-width: fit-content;
+  padding-left: 3%;
+}
+
+.nav-home #brand-logo {
+  padding-left: 5%;
 }
 
 #searchBar {
-  min-width: 20vw;
-  margin-top: 50px;
+  min-width: 22vw;
+  flex: 4 0;
+  position: relative;
+}
+
+#searchBar svg {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1rem;
 }
 
 input::placeholder {
@@ -35,15 +48,15 @@ input::placeholder {
 
 #nav-menu {
   display: flex;
+  gap: 3vw;
   justify-content: right;
   color: rgb(1, 14, 1);
-  margin-top: 50px;
+  min-width: fit-content;
 }
 
 .menu {
   color: rgb(29, 28, 28);
   text-decoration: none;
-  padding-right: 45px;
   padding-bottom: 1px;
   font-size: 18px;
   font-weight: 600;
@@ -56,30 +69,14 @@ input::placeholder {
   margin-top: -4px;
 }
 
-#main-drop {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-#drop {
-  display: flex;
-  flex-direction: column;
-  background-color: inherit;
-  border: none;
-  font-size: 16px;
-  max-width: fit-content;
-  background-color: rgb(5, 83, 5);
-  color: lightgray;
-  position: fixed;
-  text-decoration: none;
-  border-radius: 4px;
-}
-
-#review-list {
-  font-size: 17px;
-  text-decoration: underline;
-  color: rgb(8, 146, 8);
+/* .nav .menu:hover,
+.nav button:hover,
+.nav svg:hover,
+.nav .menu:hover .bi-cart {
+  color: rgb(212, 70, 13);
+} */
+.nav .menu:hover {
+  color: rgb(0, 0, 0);
 }
 
 .bi-cart {
@@ -87,9 +84,9 @@ input::placeholder {
   color: rgb(30, 31, 31);
 }
 
-.bi-cart:hover {
+.nav-home svg:hover,
+.nav-home .menu:hover .bi-cart {
   color: rgb(247, 248, 247);
-  margin-top: -3px;
 }
 
 .cartContainer {
@@ -114,9 +111,8 @@ input::placeholder {
   border-radius: 10px;
   text-align: center;
 }
-
-.login {
-  background-color: aqua;
+.nav .menu:hover #cartTotalItems {
+  color: inherit;
 }
 
 @media (max-width: 768px) {

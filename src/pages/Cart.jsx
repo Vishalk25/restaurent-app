@@ -53,7 +53,9 @@ export default function Cart() {
           </div>
         </div>
       ) : (
-        <div>Cart is Empty</div>
+        <div id="empty-cart">
+          <img src="https://fizza925.com/uploads/empty.gif" width={"520vw"} />
+        </div>
       )}
     </div>
   );

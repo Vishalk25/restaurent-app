@@ -5,6 +5,11 @@
   z-index: 3;
 }
 
+#login-btn:hover {
+  /* color: rgb(212, 70, 13); */
+  background: transparent;
+}
+
 .signup-fields {
   display: flex;
   flex-direction: column;
