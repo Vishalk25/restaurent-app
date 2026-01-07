@@ -4,13 +4,16 @@ import "./index.css";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import { FoodContextProvider } from "./Context/FoodContextProvider";
+import { LoginContextProvider } from "./Context/LoginContextProvider";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-      <FoodContextProvider>
-        <App />
-      </FoodContextProvider>
+      <LoginContextProvider>
+        <FoodContextProvider>
+          <App />
+        </FoodContextProvider>
+      </LoginContextProvider>
     </BrowserRouter>
   </StrictMode>
 );

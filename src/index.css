@@ -6,6 +6,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-color: blueviolet; */
+  
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    scroll-behavior: smooth;
 }
 
 code {

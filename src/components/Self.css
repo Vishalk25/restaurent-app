@@ -1,19 +1,19 @@
 #self-container {
   display: flex;
-  justify-content: space-around;
-  margin: 2em 0;
+  justify-content: space-between;
+  margin: 7em 8em;
 }
 
 .intro {
   text-align: center;
-  padding: 60px;
+  /* padding-top: 60px; */
   min-width: 50vw;
   flex: 4 5;
 }
 
 .intro-img {
-  text-align: center;
-  padding: 5vw;
+  text-align: right;
+  /* padding-top: 5vw; */
   flex: 3 3;
 }
 

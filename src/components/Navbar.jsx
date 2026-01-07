@@ -2,7 +2,7 @@ import "./Nav.css";
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { FoodContext } from "../Context/FoodContextProvider";
-import Login from "../pages/Login";
+import LoginPage from "../pages/Login";
 import BrandLogo from "../Assets/brandlogo2.png";
 import CustomizedMenus from "./NavMenu";
 
@@ -23,9 +23,9 @@ export default function Navbar({ path }) {
         <svg
           stroke="currentColor"
           fill="currentColor"
-          stroke-width="0"
+          strokeWidth="0"
           viewBox="0 0 24 24"
-          class="size-5 text-primary"
+          className="size-5"
           height="1em"
           width="1em"
           xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +56,7 @@ export default function Navbar({ path }) {
           <span>Offers</span>
         </Link>
         <div className="menu">
-          <Login />
+          <LoginPage />
         </div>
         <Link to="/cart" className="menu">
           <div className={"cartContainer"}>

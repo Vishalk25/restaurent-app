@@ -3,6 +3,7 @@ import { FoodContext } from "../Context/FoodContextProvider";
 import { Box } from "@mui/material";
 import CartItem from "../components/CartItem";
 import "./Cart.css";
+import emptyCart from "../assets/emptyCart.png";
 
 export default function Cart() {
   const { cart } = useContext(FoodContext);
@@ -54,7 +55,7 @@ export default function Cart() {
         </div>
       ) : (
         <div id="empty-cart">
-          <img src="https://fizza925.com/uploads/empty.gif" width={"520vw"} />
+          <img src={emptyCart} height={"588vh"} />
         </div>
       )}
     </div>

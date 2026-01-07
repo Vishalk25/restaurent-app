@@ -7,7 +7,7 @@ import Self from "../components/Self";
 
 export default function Homepage() {
   return (
-    <div>
+    <div style={{scrollbarWidth: "none"}}>
       <BrandTitle />
       <Self />
       <Main />

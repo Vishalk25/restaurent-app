@@ -8,6 +8,7 @@
 .bg-img {
   width: 100%;
   opacity: 0.6;
+  border-radius: 0 0 6em 6em;
   height: 110vh;
 }
 
@@ -39,7 +40,7 @@
 }
 
 #our-menu-label {
-  padding: 8px 13px;
+  padding: 10px 15px;
   background-color: beige;
   opacity: 0.9;
   border-radius: 5px;

@@ -6,7 +6,7 @@ function BrandTitle() {
     console.log("window", window.innerWidth);
 
     window.scrollTo({
-      top: 1260,
+      top: 1390,
       behavior: "smooth",
     });
   };
@@ -23,23 +23,6 @@ function BrandTitle() {
         <div id="our-menu" onClick={getMenu} style={{ cursor: "pointer" }}>
           <div id="our-menu-label">Our Menu</div>
         </div>
-        {/* <svg
-          width="230px"
-          height="120px"
-          viewBox="0 0 200 100"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <ellipse cx="100" cy="70" rx="90" ry="20" fill="#A9A9A9" />
-          <ellipse cx="100" cy="72" rx="70" ry="15" fill="#D3D3D3" />
-          <ellipse
-            cx="100"
-            cy="74"
-            rx="40"
-            ry="8"
-            fill="rgb(51, 50, 50)"
-            opacity="0.6"
-          />
-        </svg> */}
         <img
           src="https://media2.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZXV6b3c5cXZiZzh3cDY0bXJ2eTJjaXUzMHhjd2U5MnlyM21sbm9vOSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/XG2A5I3Gyun8oF68Ts/giphy.webp"
           width={"170vw"}

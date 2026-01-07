@@ -1,57 +1,83 @@
-import React, { useState } from "react";
-import "./Login.css";
+import React, { useState, useContext } from "react";
+import { LoginContext } from "../Context/LoginContextProvider";
+import "./Login.modal.css";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogTitle from "@mui/material/DialogTitle";
 
 const signupBox = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  height: 350,
-  width: 300,
+  fullScreen: "fullScreen",
   bgcolor: "rgb(246, 250, 246)",
   borderRadius: 2,
   boxShadow: 24,
-  pt: 2,
-  px: 4,
-  pb: 3,
-  mx: "auto",
+
 };
 
 const submitBtncss = {
-  position: "relative",
-  left: "1.3em",
-  right: "1em",
-  top: "1.2em",
   borderRadius: 4,
   height: 30,
-  width: 270,
+  width: "48%",
   bgcolor: "rgb(17, 102, 17)",
   fontSize: 12,
+  "&:hover": {
+    boxShadow: "0 3px 5px rgba(36, 36, 36, 0.5)",
+  },
 };
 
 const loginBtncss = {
   ...submitBtncss,
   bgcolor: "white",
-  mt: 1,
   color: "rgb(17, 102, 17)",
   border: "1px solid rgb(17, 102, 17)",
 };
 
-export default function Login() {
+export default function LoginPage() {
   const [open, setOpen] = useState(false);
   const [loginModal, setLoginModal] = useState(true);
+  const [loginDet, setLogin] = useState({ username: "", pass: "" });
+  console.log("LoginContext", LoginContext);
+  const { login } = useContext(LoginContext);
+
   const handleOpen = () => {
     setOpen(true);
   };
+
   const handleClose = () => {
     setOpen(false);
   };
+
+  function authForm(e) {
+    console.log("eeee", loginDet);
+    e.preventDefault();
+    const admin = { username: "havearound.admin@gmail.com", pass: "Password" };
+    const user = { username: "havearound.user@gmail.com", pass: "Password" };
+
+    if (loginDet.username === admin.username && loginDet.pass === admin.pass) {
+      alert("Login successful!");
+      login({ email: loginDet.username, username: "Admin" });
+      setOpen(false);
+    } else if (
+      loginDet.username === user.username &&
+      loginDet.pass === user.pass
+    ) {
+      alert("Login successful!");
+      login({ email: loginDet.username, username: "User" });
+      setOpen(false);
+    } else {
+      alert("Invalid credentials. Please try again.");
+    }
+  }
+
   return (
     <div className="signup-container">
-      <Button
+      <span
         id="login-btn"
         sx={{
           p: 0,
@@ -60,23 +86,92 @@ export default function Login() {
           fontSize: "16px",
           fontWeight: 600,
           textTransform: "none",
+          opacity: 0.8,
+          "&:hover": {
+            backgroundColor: "transparent",
+          },
         }}
         onClick={handleOpen}
         variant="text"
       >
         Login
-      </Button>
-      <Modal open={open} onClose={handleClose}>
-        {!loginModal ? (
-          <Box sx={{ ...signupBox }}>
-            <div className="signup-title">Signup</div>
+      </span>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        fullWidth={"xs"}
+        maxWidth={"xs"}
+        
+      >
+      {loginModal ? (    
+        <div className="modal-box">
+          <DialogTitle className="signup-title">{"Login"}
+          </DialogTitle>
+          <form>
             <div className="signup-fields">
+              <label htmlFor="email">Email:</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                onChange={(e) =>
+                  setLogin({ ...loginDet, username: e.target.value })
+                }
+                value={loginDet.username}
+              ></input>
+            </div>
+            <div className="signup-fields">
+              <label htmlFor="password">Password:</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                onChange={(e) =>
+                  setLogin({ ...loginDet, pass: e.target.value })
+                }
+                value={loginDet.pass}
+              ></input>
+              </div>
+            <div className="Btncss">
+              <Button
+                sx={{ ...submitBtncss }}
+                variant="contained"
+                onClick={(e) => authForm(e)}
+              >
+                Submit
+              </Button>
+              <Button
+                sx={{ ...loginBtncss }}
+                variant="outlined"
+                onClick={() => setLoginModal(false)}
+              >
+                Signup
+              </Button>
+            </div>
+          </form>
+          <div id="login-cred">
+            <span>
+              <b>Admin:</b> <span>havearound.admin@gmail.com</span>
+            </span>
+            <span>
+              <b>User:</b> <span>havearound.user@gmail.com</span>
+            </span>
+            <i>Password for both is 'Password'.</i>
+          </div>
+        </div>
+      
+      ) : (
+        
+        <div className="modal-box">
+          <DialogTitle className="signup-title">{"Signup"}
+          </DialogTitle>
+          <div className="signup-fields">
               <label>Name:</label>
               <input type="text"></input>
             </div>
             <div className="signup-fields">
-              <label>Phone:</label>
-              <input type="number"></input>
+              <label>Email:</label>
+              <input type="email"></input>
             </div>
             <div className="signup-fields">
               <label>Password:</label>
@@ -86,6 +181,7 @@ export default function Login() {
               <label>Confirm-Password:</label>
               <input type="password"></input>
             </div>
+            <div className="Btncss">
             <Button sx={{ ...submitBtncss }} variant="contained">
               Submit
             </Button>
@@ -96,32 +192,11 @@ export default function Login() {
             >
               Login
             </Button>
-          </Box>
-        ) : (
-          <Box sx={{ ...signupBox, height: 250 }}>
-            <div className="signup-title">Login</div>
-
-            <div className="signup-fields">
-              <label>Phone:</label>
-              <input type="phone"></input>
             </div>
-            <div className="signup-fields">
-              <label>Password:</label>
-              <input type="password"></input>
-            </div>
-            <Button sx={{ ...submitBtncss }} variant="contained">
-              Submit
-            </Button>
-            <Button
-              sx={{ ...loginBtncss }}
-              variant="outlined"
-              onClick={() => setLoginModal(false)}
-            >
-              Signup
-            </Button>
-          </Box>
-        )}
-      </Modal>
+        </div>
+      
+      )}
+      </Dialog>
     </div>
   );
 }
