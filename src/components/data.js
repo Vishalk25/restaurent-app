@@ -4,7 +4,7 @@ const Food = [
     menu: [
       {
         id: "1",
-        url: "https://5.imimg.com/data5/MW/CU/GLADMIN-16229466/biryani-500x500.png",
+        url: "https://as1.ftcdn.net/v2/jpg/08/49/41/10/1000_F_849411099_dkulf52rqnlDpfvm2V5CEhBibc77rBYp.jpg",
         name: "Dum Gosht Biryani.",
         price: "750",
       },
@@ -16,13 +16,13 @@ const Food = [
       },
       {
         id: "3",
-        url: "https://product-assets.faasos.io/eatsure/production/paneer-biryani-online.jpeg",
+        url: "https://as2.ftcdn.net/v2/jpg/04/18/22/51/1000_F_418225186_OCtaNADfMMtBWBwTTOTJYcyjuRMQIqjW.jpg",
         name: "Zaikedar Paneer Biryani.",
         price: "650",
       },
       {
         id: "4",
-        url: "https://wallpapers.com/images/featured-full/veg-biryani-png-cs2zh8qs339tqm71.png",
+        url: "https://as2.ftcdn.net/v2/jpg/16/18/00/41/1000_F_1618004120_bLmAd4c5LLpP0DbupU2ecm4EJ4NhkjOA.jpg",
         name: "Chicken kepsa Biryani.",
         price: "750",
       },
@@ -40,7 +40,7 @@ const Food = [
       },
       {
         id: "7",
-        url: "https://www.potsandpans.in/cdn/shop/articles/Mutton_Biryani_09_2048x.png?v=1662017338",
+        url: "https://as2.ftcdn.net/v2/jpg/08/24/35/73/1000_F_824357306_RV8O9bNeivyQM7JXexuwCp0rJ6hIh41C.jpg",
         name: "Egg Biryani.",
         price: "350",
       },
@@ -58,7 +58,7 @@ const Food = [
       },
       {
         id: "10",
-        url: "https://as1.ftcdn.net/v2/jpg/06/60/93/78/1000_F_660937801_OLtFSlOm6bAAEUuS5GS4ctwdl1r57o77.jpg",
+        url: "https://as2.ftcdn.net/v2/jpg/13/18/73/51/1000_F_1318735146_Ofd5IZp7MnYr12ksyzfvb4dYKFq53CEG.jpg",
         name: "Chicken Tikka Biryani.",
         price: "650",
       },

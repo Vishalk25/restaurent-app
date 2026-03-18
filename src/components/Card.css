@@ -56,6 +56,26 @@
   cursor: pointer;
 }
 
+#btn-qty {
+  color: rgb(17, 102, 17);
+  font-weight: 700;
+  font-size: large;
+  margin: 10px 0 18px;
+  background-color: rgb(253, 253, 253);
+  border: 1px solid rgb(233, 223, 223);
+  border-radius: 15px;
+  padding: 4px 0.2em;
+  cursor: pointer;
+}
+
 #card-btn:hover {
   background-color: rgb(233, 223, 223);
+}
+
+.qty-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 32px;
 }

@@ -55,7 +55,6 @@ export const LoginContextProvider = ({ children }) => {
 		setToken(t);
 		persist(u, t);
 	};
-    console.log("login token", login, user);
 
 	const logout = () => {
 		setUser(null);

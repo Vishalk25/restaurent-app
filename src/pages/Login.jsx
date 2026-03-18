@@ -1,11 +1,8 @@
 import React, { useState, useContext } from "react";
 import { LoginContext } from "../Context/LoginContextProvider";
 import "./Login.modal.css";
-import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
 import DialogTitle from "@mui/material/DialogTitle";
 
 const signupBox = {
@@ -42,7 +39,6 @@ export default function LoginPage() {
   const [open, setOpen] = useState(false);
   const [loginModal, setLoginModal] = useState(true);
   const [loginDet, setLogin] = useState({ username: "", pass: "" });
-  console.log("LoginContext", LoginContext);
   const { login } = useContext(LoginContext);
 
   const handleOpen = () => {
@@ -101,77 +97,78 @@ export default function LoginPage() {
         onClose={handleClose}
         fullWidth={"xs"}
         maxWidth={"xs"}
-        
       >
-      {loginModal ? (    
-        <div className="modal-box">
-          <DialogTitle className="signup-title">{"Login"}
-          </DialogTitle>
-          <form>
-            <div className="signup-fields">
-              <label htmlFor="email">Email:</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                onChange={(e) =>
-                  setLogin({ ...loginDet, username: e.target.value })
-                }
-                value={loginDet.username}
-              ></input>
-            </div>
-            <div className="signup-fields">
-              <label htmlFor="password">Password:</label>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                onChange={(e) =>
-                  setLogin({ ...loginDet, pass: e.target.value })
-                }
-                value={loginDet.pass}
-              ></input>
+        {loginModal ? (
+          <div className="modal-box">
+            <DialogTitle className="signup-title">{"Login"}
+            </DialogTitle>
+            <form>
+              <div className="signup-fields">
+                <label htmlFor="email">Email:</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  onChange={(e) =>
+                    setLogin({ ...loginDet, username: e.target.value })
+                  }
+                  value={loginDet.username}
+                ></input>
               </div>
-            <div className="Btncss">
-              <Button
-                sx={{ ...submitBtncss }}
-                variant="contained"
-                onClick={(e) => authForm(e)}
-              >
-                Submit
-              </Button>
-              <Button
-                sx={{ ...loginBtncss }}
-                variant="outlined"
-                onClick={() => setLoginModal(false)}
-              >
-                Signup
-              </Button>
+              <div className="signup-fields">
+                <label htmlFor="password">Password:</label>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  onChange={(e) =>
+                    setLogin({ ...loginDet, pass: e.target.value })
+                  }
+                  value={loginDet.pass}
+                ></input>
+              </div>
+              <div className="Btncss">
+                <Button
+                  sx={{ ...submitBtncss }}
+                  variant="contained"
+                  onClick={(e) => authForm(e)}
+                >
+                  Submit
+                </Button>
+                <Button
+                  sx={{ ...loginBtncss }}
+                  variant="outlined"
+                  onClick={() => setLoginModal(false)}
+                >
+                  Signup
+                </Button>
+              </div>
+            </form>
+            <div id="login-cred">
+              <span>
+                <b>Admin:</b> <span>havearound.admin@gmail.com</span>
+              </span>
+              <span>
+                <b>User:</b> <span>havearound.user@gmail.com</span>
+              </span>
+              <i>Password for both is 'Password'.</i>
             </div>
-          </form>
-          <div id="login-cred">
-            <span>
-              <b>Admin:</b> <span>havearound.admin@gmail.com</span>
-            </span>
-            <span>
-              <b>User:</b> <span>havearound.user@gmail.com</span>
-            </span>
-            <i>Password for both is 'Password'.</i>
           </div>
-        </div>
-      
-      ) : (
-        
-        <div className="modal-box">
-          <DialogTitle className="signup-title">{"Signup"}
-          </DialogTitle>
-          <div className="signup-fields">
+        ) : (
+          <div className="modal-box">
+            <DialogTitle className="signup-title">{"Signup"}
+            </DialogTitle>
+            <div className="signup-fields">
               <label>Name:</label>
               <input type="text"></input>
             </div>
             <div className="signup-fields">
               <label>Email:</label>
               <input type="email"></input>
+            </div>
+            <div className="signup-fields">
+              <label>Mobile:</label>
+              <input type="number"></input>
             </div>
             <div className="signup-fields">
               <label>Password:</label>
@@ -182,20 +179,19 @@ export default function LoginPage() {
               <input type="password"></input>
             </div>
             <div className="Btncss">
-            <Button sx={{ ...submitBtncss }} variant="contained">
-              Submit
-            </Button>
-            <Button
-              sx={{ ...loginBtncss }}
-              variant="outlined"
-              onClick={() => setLoginModal(true)}
-            >
-              Login
-            </Button>
+              <Button sx={{ ...submitBtncss }} variant="contained">
+                Submit
+              </Button>
+              <Button
+                sx={{ ...loginBtncss }}
+                variant="outlined"
+                onClick={() => setLoginModal(true)}
+              >
+                Login
+              </Button>
             </div>
-        </div>
-      
-      )}
+          </div>
+        )}
       </Dialog>
     </div>
   );

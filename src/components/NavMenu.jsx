@@ -6,7 +6,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Divider from "@mui/material/Divider";
 import MenuIcon from "@mui/icons-material/Menu";
 
-const StyledMenu = styled((props) => (
+export const StyledMenu = styled((props) => (
   <Menu
     elevation={0}
     anchorOrigin={{

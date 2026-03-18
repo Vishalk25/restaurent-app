@@ -52,6 +52,7 @@ input::placeholder {
   justify-content: right;
   color: rgb(1, 14, 1);
   min-width: fit-content;
+  align-items: center;
 }
 
 .menu {
@@ -69,12 +70,6 @@ input::placeholder {
   margin-top: -4px;
 }
 
-/* .nav .menu:hover,
-.nav button:hover,
-.nav svg:hover,
-.nav .menu:hover .bi-cart {
-  color: rgb(212, 70, 13);
-} */
 .nav .menu:hover {
   color: rgb(0, 0, 0);
 }
@@ -93,11 +88,14 @@ input::placeholder {
   position: relative;
   width: 25px;
   height: 20px;
-  margin-right: 25px;
 }
 
 .cartContainer:hover {
   margin-top: -4px;
+}
+
+.menu:last-child{
+  padding-bottom: 8px;
 }
 
 #cartTotalItems {

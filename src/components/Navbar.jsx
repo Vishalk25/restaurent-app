@@ -5,12 +5,15 @@ import { FoodContext } from "../Context/FoodContextProvider";
 import LoginPage from "../pages/Login";
 import BrandLogo from "../Assets/brandlogo2.png";
 import CustomizedMenus from "./NavMenu";
+import { LoginContext } from "../Context/LoginContextProvider";
+import Profile from "./Profile";
 
 export default function Navbar({ path }) {
   const { cart } = useContext(FoodContext);
+  const { user } = useContext(LoginContext);
 
   const [openModal, setOpenModal] = useState(false);
-  console.log("open", openModal);
+  console.log("user", user, "open", openModal);
 
   return (
     <div className={`nav${path === "" ? "-home" : ""}`}>
@@ -55,9 +58,10 @@ export default function Navbar({ path }) {
         <Link to="/offers" className="menu">
           <span>Offers</span>
         </Link>
-        <div className="menu">
+        {!user &&<div className="menu">
           <LoginPage />
-        </div>
+        </div>}
+        {user && <Profile />}
         <Link to="/cart" className="menu">
           <div className={"cartContainer"}>
             <p id="cartTotalItems">{cart.length}</p>
@@ -69,7 +73,7 @@ export default function Navbar({ path }) {
               className="bi bi-cart"
               viewBox="0 0 16 16"
             >
-              <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+              <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" stroke="black" strokeWidth={"0.4"} />
             </svg>
           </div>
         </Link>

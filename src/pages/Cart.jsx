@@ -5,6 +5,7 @@ import CartItem from "../components/CartItem";
 import "./Cart.css";
 import emptyCart from "../assets/emptyCart.png";
 
+
 export default function Cart() {
   const { cart } = useContext(FoodContext);
   const [totalBill, setTotalBill] = useState(0);
