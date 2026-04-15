@@ -50,6 +50,14 @@
   }
 }
 
+@media screen and (min-width:1800px) {
+  .mdiv {
+    width: 350px;
+    height: 200px;
+    margin: 50px;
+  }
+}
+
 #first-menu-option {
   /* padding-top: 30px; */
   display: flex;

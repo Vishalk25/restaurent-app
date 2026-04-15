@@ -41,9 +41,7 @@ export default function Navbar({ path }) {
           style={{
             width: "calc(100% - 3.5rem)",
             boxShadow: "rgba(28, 28, 28, 0.08) 0px 2px 8px",
-
-            // backgroundColor: "beige",
-            opacity: "0.5",
+            opacity: "0.8",
             padding: "0.75rem 1rem 0.75rem 2.5rem",
           }}
         ></input>
