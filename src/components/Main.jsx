@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 function Main() {
   return (
     <div id="main-container">
-      <div id="first-menu-option">
         <Link to="/menu/pizza" className="foodNames pizza">
           <div className="mdiv">
             <img
@@ -36,8 +35,6 @@ function Main() {
             <h4>Chinese</h4>
           </div>
         </Link>
-      </div>
-      <div id="second-menu-option">
         <Link to="/menu/biryani" className="foodNames biryani">
           <div className="mdiv">
             <img
@@ -68,7 +65,6 @@ function Main() {
             <h4>Soups</h4>
           </div>
         </Link>
-      </div>
     </div>
   );
 }

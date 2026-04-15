@@ -9,7 +9,7 @@
   width: 100%;
   opacity: 0.6;
   border-radius: 0 0 6em 6em;
-  height: 110vh;
+  min-height: 70vh;
 }
 
 .brandContainer {
