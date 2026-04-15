@@ -24,3 +24,15 @@
 .offer-list {
   font-size: 20px;
 }
+
+@media screen and (min-width: 1800px) {
+  .offer-container {
+    padding: 15vh;
+    background-size: 30%;
+  }
+
+  #offer-card {
+    padding: 60px;
+    font-size: 22px;
+  }
+}
