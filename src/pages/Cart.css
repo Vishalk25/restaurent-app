@@ -68,3 +68,13 @@
   flex-direction: column;
   align-items: center;
 }
+
+@media screen and (max-width: 768px) {
+  .cart-root {
+    flex-direction: column;
+  }
+  #cart-container {
+    max-height: 50vh;
+  }
+}
+
