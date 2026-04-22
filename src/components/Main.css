@@ -175,7 +175,7 @@
 @keyframes scrollbiryani {
   0% {
     position: relative;
-    transform: translate(-100%, 100%);
+    transform: translate(-10em, 10em);
     opacity: 0.7;
   }
   40% {

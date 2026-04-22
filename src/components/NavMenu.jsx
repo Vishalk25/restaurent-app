@@ -5,6 +5,8 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Divider from "@mui/material/Divider";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Link } from "react-router-dom";
+import "./NavMenu.css";
 
 export const StyledMenu = styled((props) => (
   <Menu
@@ -57,13 +59,7 @@ export default function CustomizedMenus() {
   };
 
   return (
-    <div
-      style={{
-        alignContent: "center",
-        marginRight: "15px",
-        marginTop: "1.5vh",
-      }}
-    >
+    <div id="customized-menus">
       <Button
         aria-controls={open ? "demo-customized-menu" : undefined}
         aria-haspopup="true"
@@ -86,16 +82,22 @@ export default function CustomizedMenus() {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose} disableRipple>
-          Home
-        </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          Special
-        </MenuItem>
+        <Link to="/" className="custom-menu">
+          <MenuItem onClick={handleClose} disableRipple>
+            Home
+          </MenuItem>
+        </Link>
+        <Link to="/menu/pasta" className="custom-menu">
+          <MenuItem onClick={handleClose} disableRipple>
+            Special
+          </MenuItem>
+        </Link>
         <Divider sx={{ my: 0.5 }} />
-        <MenuItem onClick={handleClose} disableRipple>
-          Offer
-        </MenuItem>
+        <Link to="/offers" className="custom-menu">
+          <MenuItem onClick={handleClose} disableRipple>
+            Offer
+          </MenuItem>
+        </Link>
         <MenuItem onClick={handleClose} disableRipple>
           Login
         </MenuItem>

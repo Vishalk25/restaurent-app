@@ -38,7 +38,7 @@ const Profile = () => {
                 <AccountCircleOutlinedIcon shapeRendering="crispEdges" sx={{ color: "inherit", fontSize: "31px" }} />
             </Button>
             <StyledMenu
-                id="demo-customized-menu"
+                id="customized-menu"
                 slotProps={{
                     list: {
                         "aria-labelledby": "demo-customized-button",
@@ -52,7 +52,7 @@ const Profile = () => {
                     {user ? user.username : "Profile"}
                 </MenuItem>
                 <MenuItem onClick={handlelogout} disableRipple>
-                    Logout
+                   { "Logout"}
                 </MenuItem>
             </StyledMenu>
         </div>

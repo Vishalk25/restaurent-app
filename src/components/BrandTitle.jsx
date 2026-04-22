@@ -3,13 +3,12 @@ import "./BrandTitle.css";
 
 function BrandTitle() {
   const getMenu = () => {
-    console.log("window", window.innerWidth);
-
     window.scrollTo({
-      top: 1390,
+      top: 1400,
       behavior: "smooth",
     });
   };
+  
   return (
     <div id="brandTitle">
       <img

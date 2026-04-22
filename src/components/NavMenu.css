@@ -1,0 +1,25 @@
+#customized-menus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-right: 15px; */
+}
+
+.custom-menu {
+  color: rgb(29, 28, 28);
+  text-decoration: none;
+  padding-bottom: 1px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  height: 20px;
+}
+
+@media screen and (min-width: 769px) {
+  #customized-menus {
+    display: none;
+  }
+  #demo-customized-menu {
+    display: none;
+  }
+}

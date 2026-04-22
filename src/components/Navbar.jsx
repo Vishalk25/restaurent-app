@@ -76,7 +76,7 @@ export default function Navbar({ path }) {
           </div>
         </Link>
       </div>
-      {/* <CustomizedMenus /> */}
+      <CustomizedMenus />
     </div>
   );
 }
