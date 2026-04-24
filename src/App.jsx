@@ -1,5 +1,5 @@
 import React from "react";
-import "./components/Nav.css";
+import "./components/Navbar.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Homepage from "./pages/Homepage";

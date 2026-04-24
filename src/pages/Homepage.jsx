@@ -1,5 +1,5 @@
 import React from "react";
-import "../components/Nav.css";
+import "../components/Navbar.css";
 import BrandTitle from "../components/BrandTitle";
 import Main from "../components/Main";
 import "../components/data";

@@ -1,4 +1,4 @@
-import "./Nav.css";
+import "./Navbar.css";
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { FoodContext } from "../Context/FoodContextProvider";
