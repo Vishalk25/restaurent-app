@@ -36,15 +36,16 @@ const loginBtncss = {
 };
 
 export default function LoginPage(props) {
-    const { open, handleClose } = props;
+  const { open, setOpen, id } = props;
   const [loginModal, setLoginModal] = useState(true);
   const [loginDet, setLogin] = useState({ username: "", pass: "" });
   const { login } = useContext(LoginContext);
 
-  
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   function authForm(e) {
-    console.log("eeee", loginDet);
     e.preventDefault();
     const admin = { username: "havearound.admin@gmail.com", pass: "Password" };
     const user = { username: "havearound.user@gmail.com", pass: "Password" };
@@ -66,8 +67,7 @@ export default function LoginPage(props) {
   }
 
   return (
-    <div className="signup-container">
-      
+    <div id={id} className="signup-container" >
       <Dialog
         open={open}
         onClose={handleClose}

@@ -17,10 +17,6 @@ export default function Navbar({ path }) {
     setOpen(true);
   };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
-
   return (
     <div className={`nav${path === "" ? "-home" : ""}`}>
       <div id="brand-logo">
@@ -62,27 +58,27 @@ export default function Navbar({ path }) {
         <Link to="/offers" className="menu">
           <span>Offers</span>
         </Link>
-        {!user &&<div className="menu">
+        {!user && <div className="menu">
           <span
-        id="login-btn"
-        sx={{
-          p: 0,
-          ml: -1,
-          color: "rgb(29, 28, 28)",
-          fontSize: "16px",
-          fontWeight: 600,
-          textTransform: "none",
-          opacity: 0.8,
-          "&:hover": {
-            backgroundColor: "transparent",
-          },
-        }}
-        onClick={handleOpen}
-        variant="text"
-      >
-        Login
-      </span>
-          <LoginPage open={open} handleClose={handleClose} />
+            id="login-btn"
+            sx={{
+              p: 0,
+              ml: -1,
+              color: "rgb(29, 28, 28)",
+              fontSize: "16px",
+              fontWeight: 600,
+              textTransform: "none",
+              opacity: 0.8,
+              "&:hover": {
+                backgroundColor: "transparent",
+              },
+            }}
+            onClick={handleOpen}
+            variant="text"
+          >
+            Login
+          </span>
+          <LoginPage id="nav-login" open={open} setOpen={setOpen} />
         </div>}
         {user && <Profile />}
         <Link to="/cart" className="menu">
@@ -101,7 +97,7 @@ export default function Navbar({ path }) {
           </div>
         </Link>
       </div>
-      <CustomizedMenus />
+      <CustomizedMenus open={open} setOpen={setOpen} />
     </div>
   );
 }
