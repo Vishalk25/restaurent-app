@@ -12,8 +12,14 @@ export default function Navbar({ path }) {
   const { cart } = useContext(FoodContext);
   const { user } = useContext(LoginContext);
 
-  const [openModal, setOpenModal] = useState(false);
-  console.log("user", user, "open", openModal);
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <div className={`nav${path === "" ? "-home" : ""}`}>
@@ -57,7 +63,26 @@ export default function Navbar({ path }) {
           <span>Offers</span>
         </Link>
         {!user &&<div className="menu">
-          <LoginPage />
+          <span
+        id="login-btn"
+        sx={{
+          p: 0,
+          ml: -1,
+          color: "rgb(29, 28, 28)",
+          fontSize: "16px",
+          fontWeight: 600,
+          textTransform: "none",
+          opacity: 0.8,
+          "&:hover": {
+            backgroundColor: "transparent",
+          },
+        }}
+        onClick={handleOpen}
+        variant="text"
+      >
+        Login
+      </span>
+          <LoginPage open={open} handleClose={handleClose} />
         </div>}
         {user && <Profile />}
         <Link to="/cart" className="menu">

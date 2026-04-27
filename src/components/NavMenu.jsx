@@ -7,8 +7,10 @@ import Divider from "@mui/material/Divider";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 import { FoodContext } from "../Context/FoodContextProvider";
+import {LoginContext} from "../Context/LoginContextProvider";
 import "./NavMenu.css";
 import "./Navbar.css";
+import LoginPage from "../pages/Login";
 
 export const StyledMenu = styled((props) => (
   <Menu
@@ -52,6 +54,7 @@ export const StyledMenu = styled((props) => (
 
 export default function CustomizedMenus() {
   const [anchorEl, setAnchorEl] = useState(null);
+  const { user, logout } = useContext(LoginContext);
   const open = Boolean(anchorEl);
     const { cart } = useContext(FoodContext);
   
@@ -61,6 +64,10 @@ export default function CustomizedMenus() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const handleLogout=()=>{
+    logout();
+    handleClose();
+  }
 
   return (
     <div id="customized-menus">
@@ -117,9 +124,31 @@ export default function CustomizedMenus() {
             Offer
           </MenuItem>
         </Link>
-        <MenuItem onClick={handleClose} disableRipple>
-          Login
+        {!user ? <MenuItem onClick={handleClose} disableRipple>
+        <span
+        id="login-btn"
+        sx={{
+          p: 0,
+          ml: -1,
+          color: "rgb(29, 28, 28)",
+          fontSize: "16px",
+          fontWeight: 600,
+          textTransform: "none",
+          opacity: 0.8,
+          "&:hover": {
+            backgroundColor: "transparent",
+          },
+        }}
+        onClick={handleOpen}
+        variant="text"
+      >
+        Login
+      </span>
+          <LoginPage open={open} handleClose={handleClose} />
         </MenuItem>
+        :<MenuItem onClick={handleLogout} disableRipple>
+          Logout
+        </MenuItem>}
       </StyledMenu>
     </div>
   );

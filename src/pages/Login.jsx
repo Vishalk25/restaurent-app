@@ -35,19 +35,13 @@ const loginBtncss = {
   border: "1px solid rgb(17, 102, 17)",
 };
 
-export default function LoginPage() {
-  const [open, setOpen] = useState(false);
+export default function LoginPage(props) {
+    const { open, handleClose } = props;
   const [loginModal, setLoginModal] = useState(true);
   const [loginDet, setLogin] = useState({ username: "", pass: "" });
   const { login } = useContext(LoginContext);
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
+  
 
   function authForm(e) {
     console.log("eeee", loginDet);
@@ -73,25 +67,7 @@ export default function LoginPage() {
 
   return (
     <div className="signup-container">
-      <span
-        id="login-btn"
-        sx={{
-          p: 0,
-          ml: -1,
-          color: "rgb(29, 28, 28)",
-          fontSize: "16px",
-          fontWeight: 600,
-          textTransform: "none",
-          opacity: 0.8,
-          "&:hover": {
-            backgroundColor: "transparent",
-          },
-        }}
-        onClick={handleOpen}
-        variant="text"
-      >
-        Login
-      </span>
+      
       <Dialog
         open={open}
         onClose={handleClose}
