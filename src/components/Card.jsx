@@ -37,7 +37,6 @@ function Card(props) {
     }
   };
 
-
   const { source, dish, ...val } = props;
 
   useEffect(() => {

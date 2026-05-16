@@ -6,7 +6,6 @@ import { useState } from "react";
 import { LoginContext } from "../Context/LoginContextProvider";
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 
-
 const Profile = () => {
     const { user, logout } = useContext(LoginContext);
     const [anchorEl, setAnchorEl] = useState(null);
